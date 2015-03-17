@@ -1,8 +1,8 @@
 %global homedir %{_datadir}/tuskar
 
 Name:	      openstack-tuskar-ui
-Version:      XXX
-Release:      XXX{?dist}
+Version:    0.2.0
+Release:    1%{?dist}
 Summary:	  The UI component for Tuskar
 
 Group:		  Applications/System
@@ -151,6 +151,9 @@ export PYTHONPATH=$PYTHONPATH:%{_datadir}/openstack-dashboard
 %endif
 
 %changelog
+* Tue Mar 17 2014 Jiri Tomasek <jtomasek@redhat.com> - 0.2.0-6
+- set the version properly
+
 * Tue Oct 28 2014 Jordan OMara <jomara@redhat.com> - 0.2.0-5
 - changes to static file locations to more closely mirror horizon (jomara@redhat.com)
 
