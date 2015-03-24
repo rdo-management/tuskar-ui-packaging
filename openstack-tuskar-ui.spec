@@ -59,7 +59,6 @@ Requires: os-cloud-config
 Requires: python-lockfile
 Requires: python-scss
 Requires: python-netaddr
-Requires: python-pbr
 Requires: python-eventlet
 Requires: python-kombu
 Requires: python-iso8601
@@ -151,6 +150,9 @@ export PYTHONPATH=$PYTHONPATH:%{_datadir}/openstack-dashboard
 %endif
 
 %changelog
+* Tue Mar 24 2015 Jiri Tomasek <jtomasek@redhat.com> 0.2.0-6
+- Drop errant requires: on python-pbr
+
 * Tue Oct 28 2014 Jordan OMara <jomara@redhat.com> - 0.2.0-5
 - changes to static file locations to more closely mirror horizon (jomara@redhat.com)
 
