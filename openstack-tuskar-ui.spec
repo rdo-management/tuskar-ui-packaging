@@ -150,11 +150,11 @@ export PYTHONPATH=$PYTHONPATH:%{_datadir}/openstack-dashboard
 %endif
 
 %changelog
-* Tue Mar 24 2015 Jiri Tomasek <jtomasek@redhat.com> 0.2.0-6
-- Drop errant requires: on python-pbr
-
 * Tue Apr 14 2015 Jiri Tomasek <jtomasek@redhat.com> - 0.2.0-6
 - do not disable Identity dashboard because of Horizon bug (https://bugs.launchpad.net/horizon/+bug/1399126)
+
+* Tue Mar 24 2015 Jiri Tomasek <jtomasek@redhat.com> 0.2.0-6
+- Drop errant requires: on python-pbr
 
 * Tue Oct 28 2014 Jordan OMara <jomara@redhat.com> - 0.2.0-5
 - changes to static file locations to more closely mirror horizon (jomara@redhat.com)
