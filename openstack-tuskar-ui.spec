@@ -108,13 +108,6 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_20_project.py %{buildroot}%{_d
 # ln -s %{_sysconfdir}/openstack-dashboard/enabled/_30_identity.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_30_identity.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_50_tuskar.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_50_tuskar.py
 
-# Move static files to horizon. These require that you compile them again
-# post install { python manage.py compress }
-mkdir -p  %{buildroot}%{_datadir}/openstack-dashboard/static/infrastructure
-cp -r tuskar_ui/infrastructure/static/infrastructure/* %{buildroot}%{_datadir}/openstack-dashboard/static/infrastructure/
-mkdir -p  %{buildroot}%{python_sitelib}/tuskar_ui/static/infrastructure
-cp -r tuskar_ui/infrastructure/static/infrastructure/* %{buildroot}%{python_sitelib}/tuskar_ui/infrastructure/static/infrastructure/
-
 %files
 %doc LICENSE README.rst
 %dir %{python_sitelib}/tuskar_ui
@@ -122,19 +115,12 @@ cp -r tuskar_ui/infrastructure/static/infrastructure/* %{buildroot}%{python_site
 %{python_sitelib}/tuskar_ui/*.py*
 %{python_sitelib}/tuskar_ui/test
 %{python_sitelib}/tuskar_ui/infrastructure
-%{python_sitelib}/tuskar_ui/static
 %{python_sitelib}/tuskar_ui/utils
 %{python_sitelib}/tuskar_ui/api
-%{python_sitelib}/tuskar_ui/infrastructure/templates
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_10_admin.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_20_project.py*
 # %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_30_identity.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_50_tuskar.py*
-%dir %{_datadir}/openstack-dashboard/static/infrastructure
-%{_datadir}/openstack-dashboard/static/infrastructure/js
-%{_datadir}/openstack-dashboard/static/infrastructure/tests
-%{_datadir}/openstack-dashboard/static/infrastructure/scss
-%{_datadir}/openstack-dashboard/static/infrastructure/images
 %{_sysconfdir}/openstack-dashboard/enabled/_10_admin.py*
 %{_sysconfdir}/openstack-dashboard/enabled/_20_project.py*
 # %{_sysconfdir}/openstack-dashboard/enabled/_30_identity.py*
@@ -150,6 +136,9 @@ export PYTHONPATH=$PYTHONPATH:%{_datadir}/openstack-dashboard
 %endif
 
 %changelog
+* Tue Apr 21 2015 Jiri Tomasek <jtomasek@redhat.com> - 0.0.1-2
+- Remove copying static files to openstack-dashboard (it is done automatically by Horizon's systemd scriptlet when httpd restarts)
+
 * Tue Apr 14 2015 Jiri Tomasek <jtomasek@redhat.com> - 0.2.0-6
 - do not disable Identity dashboard because of Horizon bug (https://bugs.launchpad.net/horizon/+bug/1399126)
 
