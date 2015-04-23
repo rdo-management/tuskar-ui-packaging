@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a106d94_f910df5a",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1002924
+      },
+      "writtenOn": "2015-04-23T09:37:54Z",
+      "side": 1,
+      "message": "openstack-dashboard requires python-django-horizon, this line can be deleted.\n\nrpm -q --requires openstack-dashboard \n\nwill give you the full list of installed dependencies for openstack-dashboard",
+      "revId": "ae197765337ade728b9763b968ee2c7be6b5566a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_dc0cf13d",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1002924
+      },
+      "writtenOn": "2015-04-23T09:37:54Z",
+      "side": 1,
+      "message": "you can also remove all python-*client-packages (but NOT tuskarclient and ironicclient)",
+      "revId": "ae197765337ade728b9763b968ee2c7be6b5566a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_3c154540",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1002924
+      },
+      "writtenOn": "2015-04-23T09:37:54Z",
+      "side": 1,
+      "message": "for what is tree used? I can not spot it here in the spec, and I would suspect, it\u0027s not used by setup.py as well?",
+      "revId": "ae197765337ade728b9763b968ee2c7be6b5566a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_390ef73b",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1002924
+      },
+      "writtenOn": "2015-04-23T09:37:54Z",
+      "side": 1,
+      "message": "is already required by openstack-dashboard",
+      "revId": "ae197765337ade728b9763b968ee2c7be6b5566a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_190b3b2b",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1002924
+      },
+      "writtenOn": "2015-04-23T09:37:54Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "ae197765337ade728b9763b968ee2c7be6b5566a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_fc072d16",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1002924
+      },
+      "writtenOn": "2015-04-23T09:37:54Z",
+      "side": 1,
+      "message": "horizon nowadays uses oslo_concurrency. If tuskar-ui doesn\u0027t use its own locking somewhere else, please drop this",
+      "revId": "ae197765337ade728b9763b968ee2c7be6b5566a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_bc013507",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1002924
+      },
+      "writtenOn": "2015-04-23T09:37:54Z",
+      "side": 1,
+      "message": "dito.",
+      "revId": "ae197765337ade728b9763b968ee2c7be6b5566a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_991f2b6c",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1002924
+      },
+      "writtenOn": "2015-04-23T09:37:54Z",
+      "side": 1,
+      "message": "is there a reason not to use\n%{python_sitelib}/tuskar_ui\n\nand to leave out lines 106-110 ?",
+      "revId": "ae197765337ade728b9763b968ee2c7be6b5566a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
