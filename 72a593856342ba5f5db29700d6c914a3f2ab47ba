@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a106d94_ee3805f1",
+        "filename": "openstack-tuskar-ui.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1004430
+      },
+      "writtenOn": "2015-04-27T13:16:36Z",
+      "side": 1,
+      "message": "It would be nice to mention in a comment why this is commented out, and adding a link to the bug.",
+      "revId": "72a593856342ba5f5db29700d6c914a3f2ab47ba",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
